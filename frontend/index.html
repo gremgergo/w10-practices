@@ -4,9 +4,36 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title>This is FRONTEND</title>
+
+	<script src="search-form.js" defer></script> <!-- dever miatt megvarja amig az egesz html betolt majd a js -->
+	<script src="save-docs.js"></script>
+
+	<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-	<div id="root"></div>
+	<!-- <div id="root"></div> -->
+
+	<form class="hidden" id="form-google-search" action="https://www.google.com/search" method="get">
+		<input name="q" type="text"> <!-- a q-val iratjuk ki az url-be a keresendo dolgokat -->
+		<button id="btn-google-search">submit</button>
+	</form>
+	
+	<form class="hidden" action="" method="post">
+		<input name="username" type="text">
+		<input name="password" type="password">
+		<button>submit</button>
+	</form>
+
+	<div class="docs">
+		<label for="doc-text">a dokumentum szovege</label> <!-- ha azt akarom hogy a label meg a text area egybe legyen a name-nek meg a for-nak megegyezzen -->
+		<textarea name="doc-text" id="" cols="30" rows="10"></textarea>
+		<p class="hidden" id="savi-in-progress-text" >mentes...</p>
+	</div>
+
 </body>
 </html>
+
+<!-- log-in form-ot sose csinalunk GET request-el -->
