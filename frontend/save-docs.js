@@ -2,7 +2,7 @@ setInterval(save, 3000);
 
 async function save() {
     const textarea = document.querySelector('#doc-text');
-    const docText = textarea.vaule;  
+    const docText = textarea.value;  
 
     const saveText = document.querySelector('#save-in-progress-text');
     saveText.classList.remove('hidden');
@@ -14,7 +14,7 @@ async function save() {
         saveText.classList.add('hidden')
     }) */
 
-    await fetch('https://127.0.0.1:9000/',{
+    await fetch('http://127.0.0.1:3000/save',{
         method: 'POST',
         body: docText
     });
